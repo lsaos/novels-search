@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Recherche de romans</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+            <a class="navbar-brand" href="./index.html">Recherche de romans</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSearch">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+
+                <form class="form-inline" id="form-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" autocomplete="off" id="text-search" placeholder="Livre ou auteur..." aria-label="Livre ou auteur..." aria-describedby="button-search">
+						<div class="autocomplete-items">
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="submit" id="button-search"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+
+        <main role="main">
+            <section class="jumbotron text-center" id="section-welcome">
+                <div class="container">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Bienvenue !</h1>
+                        <p class="lead">Commencez par rechercher le titre d'un livre ou le nom d'un auteur dans la barre ci-dessus.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="jumbotron text-center" id="section-loading" style="display: none;">
+                <div class="container">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Recherche en cours...</h1><br>
+                        <p class="lead"><i class="fas fa-spinner fa-pulse fa-3x"></i></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="jumbotron text-center" id="section-no-results" style="display: none;">
+                    <div class="container">
+                        <div class="jumbotron">
+                            <h1 class="display-4">Aucun résultat !</h1><br>
+                            <p class="lead"><i class="fas fa-thumbs-down fa-3x"></i></p>
+                        </div>
+                    </div>
+            </section>
+
+            <section id="section-results" style="display: none;">
+                <p id="results-count"></p>
+                <div id="results-list">
+                </div>
+            </section>
+
+            <section id="section-book" class="container" style="display: none;">
+            </section>
+        </main>
+
+        <footer class="text-center">
+            <p>
+                <a href="./index.html">Recherche de romans</a> - Projet Web Sémantique - Groupe H410 WS-12<br>
+                Belin Aurélien - Coquio-Lebresne Clémentine - Nahid Amine - Saos Loïc - Terreu Jorge - Vianey Antonin
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./src/display.js"></script>
+    <script src="./src/search.js"></script>
+</body>
+</html>
